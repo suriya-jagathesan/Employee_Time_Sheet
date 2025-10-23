@@ -8,6 +8,7 @@ public class EmployeeTimeSheetApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(EmployeeTimeSheetApplication.class, args);
+		System.out.println("Test");
 	}
 
 }
