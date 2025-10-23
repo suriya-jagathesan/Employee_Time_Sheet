@@ -2,11 +2,11 @@ package com.example.Employee_Timesheet.Employee_Time_Sheet.Entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.springframework.stereotype.Repository;
 
-import java.time.LocalDate;
+
+
 import java.time.LocalDateTime;
-import java.time.LocalTime;
+
 
 @Data
 @Entity
@@ -14,8 +14,12 @@ public class TimeSheetEntry {
     @Id
     @GeneratedValue
     private int id;
-    @ManyToOne
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "employee_id")
     private Employee employee;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "project_id")
     private Projects project;
     @Column(nullable = false)
     private LocalDateTime from_time;
