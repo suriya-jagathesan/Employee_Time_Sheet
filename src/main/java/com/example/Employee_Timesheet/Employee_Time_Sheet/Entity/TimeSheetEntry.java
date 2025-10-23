@@ -8,7 +8,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-@Repository
 @Data
 @Entity
 public class TimeSheetEntry {

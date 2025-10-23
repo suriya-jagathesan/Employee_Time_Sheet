@@ -8,7 +8,6 @@ import lombok.Generated;
 import org.springframework.stereotype.Repository;
 
 @Data
-@Repository
 @Entity
 public class Employee {
     @Id

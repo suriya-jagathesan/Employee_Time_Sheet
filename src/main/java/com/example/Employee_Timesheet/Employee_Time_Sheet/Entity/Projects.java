@@ -10,7 +10,6 @@ import java.time.LocalDate;
 
 @Entity
 @Data
-@Repository
 public class Projects {
     @Id
     @GeneratedValue
