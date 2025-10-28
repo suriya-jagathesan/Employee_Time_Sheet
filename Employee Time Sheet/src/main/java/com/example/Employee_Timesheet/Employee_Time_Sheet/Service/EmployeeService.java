@@ -61,4 +61,18 @@ public List<EmplyeeDTO> getEmployeesByEmail(String email) {
         return empByID
                 .map(EmplyeeDTO::new);
     }
+
+    public void deleteEmployeeById(int id) {
+        Optional<Employee> empByID = employeeRepository.findById(Long.valueOf(id));
+        if( empByID.isEmpty() ){
+            throw new DataNotFoundException("No Employee Found");
+        }
+        System.out.println(empByID);
+        employeeRepository.deleteById(Long.valueOf(id));
+    }
+
+    public EmplyeeDTO updateEmployee(Employee updEmp) {
+        Employee e = employeeRepository.save(updEmp);
+        return new EmplyeeDTO(e);
+    }
 }
