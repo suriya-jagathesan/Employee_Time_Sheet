@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 
-
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 
@@ -20,12 +20,9 @@ public class TimeSheetEntry {
     // Each entry belongs to one project
     @ManyToOne(optional = false)
     private Projects project;
-
-
-    @Column(nullable = false)
     private LocalDateTime from_time;
-    @Column(nullable = false)
     private LocalDateTime to_time;
     private double hours_worked;
     private String description;
+    private LocalDate date;
 }
